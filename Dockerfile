@@ -31,11 +31,11 @@ RUN code-server --install-extension ms-python.python
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
-USER root
+# USER root
 
 # Install Java
-RUN apt-get install -y openjdk-8-jdk
-RUN apt-get install ca-certificates-java && \
+RUN sudo apt-get install -y openjdk-8-jdk
+RUN sudo apt-get install ca-certificates-java && \
     update-ca-certificates -f;
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk/
 RUN export JAVA_HOME
@@ -48,7 +48,7 @@ RUN sudo apt-get install -y python python-pip
 # COPY deploy-container/myTool /home/coder/myTool
 # -----------
 
-USER coder
+# USER coder
 # Port
 ENV PORT=8080
 
