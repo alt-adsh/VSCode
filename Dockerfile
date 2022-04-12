@@ -32,8 +32,7 @@ RUN code-server --install-extension actboy168.tasks-0.9.0.vsix
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-
-# USER root
+RUN sudo apt-get install -y vim
 
 # Install Java
 RUN sudo apt-get install -y openjdk-11-jdk
@@ -43,12 +42,20 @@ RUN export JAVA_HOME
 # Install Python
 RUN sudo apt-get install -y python3 python3-pip
 
+# Install Maven
+RUN sudo apt-get -y install maven
+
+# Install Tomcat
+RUN mkdir /usr/local/tomcat
+RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.tar.gz -O /tmp/tomcat.tar.gz
+RUN cd /tmp && tar xvfz tomcat.tar.gz
+RUN cp -Rv /tmp/apache-tomcat-9.0.50/* /usr/local/tomcat/
+EXPOSE 8080
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
 # -----------
 
-# USER coder
 # Port
 ENV PORT=8080
 
