@@ -27,7 +27,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 RUN code-server --install-extension esbenp.prettier-vscode
 RUN code-server --install-extension vscjava.vscode-java-pack
 RUN code-server --install-extension ms-python.python
-RUN code-server --install-extension actboy168.tasks
+RUN code-server --install-extension actboy168.tasks-0.9.0.vsix
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
