@@ -101,11 +101,13 @@ if [ -n GIT_USER ]; then
     git config --global url."https://api:$GIT_TOKEN@github.com/".insteadOf "https://github.com/"
     git config --global url."https://ssh:$GIT_TOKEN@github.com/".insteadOf "ssh://git@github.com/"
     git config --global url."https://git:$GIT_TOKEN@github.com/".insteadOf "git@github.com:"
+    git config --global pack.windowMemory "32m"
 fi
 
 export GIT_TRACE_PACKET=1
 export GIT_TRACE=1
 export GIT_CURL_VERBOSE=1
+
 #Trigger
 
 # Now we can run code-server with the default entrypoint
