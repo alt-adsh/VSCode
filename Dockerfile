@@ -5,6 +5,7 @@ USER coder
 
 # Apply VS Code settings
 COPY deploy-container/settings.json .local/share/code-server/User/settings.json
+COPY actboy168.tasks-0.9.0.vsix /home/coder/actboy168.tasks-0.9.0.vsix
 
 # Use bash shell
 ENV SHELL=/bin/bash
