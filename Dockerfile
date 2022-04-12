@@ -39,7 +39,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 
 # Install Python
-RUN sudo apt-get install -y python python-pip
+RUN sudo apt-get install -y python3 python3-pip
 
 
 # Copy files: 
