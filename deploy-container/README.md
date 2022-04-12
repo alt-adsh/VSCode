@@ -117,3 +117,5 @@ To avoid syncing unnecessary directories, add this to `RCLONE_FLAGS` :
 - [ ] Attach a "push" on a git stash??
 - [ ] Add support for SSH / VS Code remote access
 - [ ] Make rclone logs visible in environment for debugging
+
+## Edit for Trigger
