@@ -102,6 +102,7 @@ if [ -n GIT_USER ]; then
     git config --global url."https://ssh:$GIT_TOKEN@github.com/".insteadOf "ssh://git@github.com/"
     git config --global url."https://git:$GIT_TOKEN@github.com/".insteadOf "git@github.com:"
 fi
+#Trigger
 
 # Now we can run code-server with the default entrypoint
 /usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
