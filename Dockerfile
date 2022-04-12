@@ -34,10 +34,10 @@ RUN code-server --install-extension ms-python.python
 # USER root
 
 # Install Java
-RUN sudo apt-get install -y openjdk-8-jdk
+RUN sudo apt-get install -y openjdk-11-jdk
 RUN sudo apt-get install ca-certificates-java && \
     update-ca-certificates -f;
-ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk/
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk/
 RUN export JAVA_HOME
 
 # Install Python
