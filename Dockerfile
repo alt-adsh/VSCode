@@ -32,7 +32,7 @@ RUN code-server --install-extension actboy168.tasks-0.9.0.vsix
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
-RUN sudo apt-get install -y vim
+RUN sudo apt-get install -y vim wget
 
 # Install Java
 RUN sudo apt-get install -y openjdk-11-jdk
@@ -46,10 +46,10 @@ RUN sudo apt-get install -y python3 python3-pip
 RUN sudo apt-get -y install maven
 
 # Install Tomcat
-RUN mkdir /usr/local/tomcat
-RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.tar.gz -O /tmp/tomcat.tar.gz
+RUN sudo mkdir /usr/local/tomcat
+RUN sudo wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50.tar.gz -O /tmp/tomcat.tar.gz
 RUN cd /tmp && tar xvfz tomcat.tar.gz
-RUN cp -Rv /tmp/apache-tomcat-9.0.50/* /usr/local/tomcat/
+RUN sudo cp -Rv /tmp/apache-tomcat-9.0.50/* /usr/local/tomcat/
 EXPOSE 8080
 
 # Copy files: 
