@@ -96,5 +96,8 @@ if [ -n "$DOTFILES_REPO" ]; then
 fi
 
 echo "[$PREFIX] Starting code-server..."
+
+git -c credential.helper='!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_TOKEN}"; }; f'
+
 # Now we can run code-server with the default entrypoint
 /usr/bin/entrypoint.sh --bind-addr 0.0.0.0:8080 $START_DIR
